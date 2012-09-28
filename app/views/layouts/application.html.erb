@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SimpleestForm</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+<div class="container">
+<%= link_to "Back to Posts", posts_path %>
+
+<%= yield %>
+
+</div>
+
+</body>
+</html>

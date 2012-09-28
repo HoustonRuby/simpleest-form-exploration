@@ -1,0 +1,8 @@
+<% if @post.errors.any? %>
+	$("#top-form-funtime").html("<%= escape_javascript(render partial: "form", locals: {post: @post}) %>");
+<% else %>
+	$("#top-form-funtime").html("<%= escape_javascript(render @post) %>");
+		
+	$(".post<%=@post.id%>").html("<%= j(render @post) %>");
+	
+<% end %>

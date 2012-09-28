@@ -1,0 +1,37 @@
+<%= simple_form_for post, remote: true do |f| %>
+	<%= f.input :title %>
+	<%= f.input :released, as: "string", input_html: {class: "datepicker"}%>
+	<%= f.input :published, as: "date", discard_day: true, prompt: "Please Select"%>
+	<%= f.association :categories, as: :check_boxes %>
+	<%= f.submit class: "btn btn-primary btn-large"%>
+<% end %>
+
+<% if false %>
+<hr/>
+<%= form_for post do |f| %>
+	<% if @post.errors.any? %>
+		<h3>Yo! Fix this stuff!</h3>
+		<ul>
+			<% @post.errors.full_messages.each do |e| %>
+				<li><%= e %></li>
+			<% end %>
+		</ul>
+	<% end %>
+	<div>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</div>
+	<div>
+		<%= f.label :released %>
+		<%= f.date_select :released, prompt: "Please Select" %>
+	</div>
+	<div>
+		<%= f.label :published %>
+		<%= f.date_select :published, discard_day: true, prompt: "Please Select" %>
+	</div>
+	<div>
+		<%= f.submit %>
+	</div>
+<% end %>
+
+<% end %>

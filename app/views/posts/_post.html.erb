@@ -1,0 +1,12 @@
+<div class="post<%=post.id%>">
+<h1><%= post.title %> - 
+	<%= link_to "Edit", edit_post_path(post), remote: true,
+		class: "post-edit-fun btn btn-tiny"
+	%>
+	</h2>
+<ul>
+	<li>Released: <%= post.released %></li>
+	<li>Published: <%= post.published %></li>
+	<li>Created at: <%= post.created_at %></li>
+</ul>
+</div>
